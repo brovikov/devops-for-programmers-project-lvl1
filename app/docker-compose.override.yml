@@ -1,0 +1,10 @@
+services:
+  app:
+    command: npm start
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+volumes:
+  node_modules:
