@@ -2,6 +2,7 @@ version: "3.9"
 services:
   app:
     build:
+      image: llexx/app:cached
       context: .
       dockerfile: Dockerfile.production
     ports:
