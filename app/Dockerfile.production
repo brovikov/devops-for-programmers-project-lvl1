@@ -11,6 +11,7 @@ RUN apk add bash sqlite
 WORKDIR /app
 
 COPY app/package.json .
+
 COPY app/package-lock.json .
 
 RUN npm install
