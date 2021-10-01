@@ -25,7 +25,7 @@ jobs:
           file: app/Dockerfile.production
           cache-from: type=registry,ref=app:cached
           cache-to: type=inline
-          push: true
+          push: false
           tags: app:cached
       - 
         name: Check
