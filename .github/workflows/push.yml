@@ -26,7 +26,7 @@ jobs:
           cache-from: type=registry,ref=app:cached
           cache-to: type=inline
           push: true
-          tags: app:cached
+          tags: llexx/app:cached
       - 
         name: Check
         run:
