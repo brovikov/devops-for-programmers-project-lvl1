@@ -30,7 +30,8 @@ jobs:
       - 
         name: Check
         run:
-          docker-compose --file app/docker-compose.yml up --abort-on-container-exit
+          make ci
+          # docker-compose --file app/docker-compose.yml up --abort-on-container-exit
 
       - name: Push
         uses: docker/build-push-action@v2
