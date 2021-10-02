@@ -29,6 +29,8 @@ jobs:
           tags: llexx/app:cached
       - 
         name: Check
+        with:
+          cache-from: type=registry,ref=llexx/app:cached
         run:
           make ci
 
