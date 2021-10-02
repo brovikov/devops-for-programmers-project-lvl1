@@ -21,24 +21,22 @@ jobs:
         name: Build App
         uses: docker/build-push-action@v2
         with:
-          context: .
-          file: app/Dockerfile.production
+          context: ./app
+          file: Dockerfile.production
           cache-from: type=registry,ref=llexx/app:cached
           cache-to: type=inline
           push: true
           tags: llexx/app:cached
       - 
         name: Check
-        with:
-          cache-from: type=registry,ref=llexx/app:cached
         run:
           make ci
 
       - name: Push
         uses: docker/build-push-action@v2
         with:
-          context: .
-          file: app/Dockerfile.production
+          context: ./app
+          file: Dockerfile.production
           cache-from: type=registry,ref=llexx/app:cached
           push: true
           tags: llexx/app:latest
