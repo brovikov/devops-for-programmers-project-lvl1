@@ -11,4 +11,3 @@ ENV SODIUM_NATIVE_PREBUILD=/prebuilds/node_modules/sodium-native/
 WORKDIR /app
 
 RUN npm install
-
