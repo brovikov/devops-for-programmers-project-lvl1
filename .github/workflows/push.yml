@@ -20,6 +20,8 @@ jobs:
       - 
         name: Build App
         uses: docker/build-push-action@v2
+        env:
+          DATABASE_HOST: db
         with:
           context: ./app
           file: app/Dockerfile.production
