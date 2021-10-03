@@ -1,6 +1,6 @@
 version: "3.9"
 services:
-  #
+
   # postgres:
   #   image: postgres:14.0-alpine
   #   environment:
@@ -10,9 +10,6 @@ services:
 
   app:
     image: llexx/app:cached
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile.production
 
 # volumes:
 #   pgdata:
