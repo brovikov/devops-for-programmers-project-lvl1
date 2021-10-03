@@ -29,8 +29,6 @@ jobs:
           tags: llexx/app:cached
       - 
         name: Check
-        env:
-          DATABASE_HOST: db
         run:
           make ci
 

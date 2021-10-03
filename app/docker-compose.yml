@@ -3,6 +3,7 @@ services:
 
   db:
     image: postgres:14.0-alpine
+    env_file: app/.env.example
     environment:
       POSTGRES_HOST_AUTH_METHOD: trust
     volumes:
@@ -10,9 +11,7 @@ services:
 
   app:
     image: llexx/app:cached
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile.production
+    env_file: app/.env.example
     depends_on:
       - db
 
