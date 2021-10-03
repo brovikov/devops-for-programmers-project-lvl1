@@ -11,7 +11,7 @@ services:
 
   app:
     image: llexx/app:cached
-    # env_file: .env.example
+    restart: true
     depends_on:
       - db
 
