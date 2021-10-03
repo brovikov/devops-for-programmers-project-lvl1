@@ -9,10 +9,10 @@ services:
       - pgdata:/var/lib/postgresql/data
 
   app:
-    # image: llexx/app:cached
-    build:
-      context: .
-      dockerfile: Dockerfile.production
+    image: llexx/app:cached
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile.production
     depends_on:
       - db
 
