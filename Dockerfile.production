@@ -10,16 +10,12 @@ RUN apk add bash sqlite
 
 WORKDIR /app
 
-COPY package.json .
+COPY app/package.json .
 
-COPY package-lock.json .
+COPY app/package-lock.json .
 
 RUN npm install
 
-COPY . .
+COPY ./app .
 
-COPY .env.example ./.env
-
-EXPOSE 8080
-
-CMD npm test
+COPY ./.env.example ./.env

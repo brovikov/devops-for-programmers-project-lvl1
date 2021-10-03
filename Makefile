@@ -1,3 +1,3 @@
 ci:
-	docker-compose --file app/docker-compose.yml up --abort-on-container-exit
+	docker-compose --file docker-compose.yml up --abort-on-container-exit
 
