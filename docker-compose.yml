@@ -12,7 +12,6 @@ services:
       context: .
       dockerfile: Dockerfile.production
     command: [ "/bin/sh", "-c", '/wait && npm test' ]
-    # restart: on-failure
     depends_on:
       - db
     environment:
