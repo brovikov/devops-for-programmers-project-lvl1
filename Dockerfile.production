@@ -1,10 +1,13 @@
-FROM node:14.16-alpine
+FROM node:14.16
 
-RUN apk add --no-cache --virtual build-deps python alpine-sdk autoconf libtool automake bash sqlite git && \
-  mkdir -p /prebuilds && cd /prebuilds && npm init -y && npm install sodium-native@3.1.1 && \
-  apk del build-deps
-
-ENV SODIUM_NATIVE_PREBUILD=/prebuilds/node_modules/sodium-native/
+# RUN apk add --no-cache --virtual build-deps python alpine-sdk autoconf libtool automake bash sqlite git && \
+#   mkdir -p /prebuilds && cd /prebuilds && npm init -y && npm install sodium-native@3.1.1 && \
+#   apk del build-deps
+#
+# RUN apt-get update && \
+#     apt-get install -y default-jre && \
+#
+# ENV SODIUM_NATIVE_PREBUILD=/prebuilds/node_modules/sodium-native/
 
 ## Add the wait script to the image
 ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.9.0/wait /wait
