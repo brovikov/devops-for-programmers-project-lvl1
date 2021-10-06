@@ -6,6 +6,20 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  caddy:
+    image: caddy:2.4.5-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "./services/caddy/Caddyfile:/etc/caddy/Caddyfile"
+      - "./public:/etc/caddy/public"
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - app
+
   app:
     image: llexx/app:cached
     build:
