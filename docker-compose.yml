@@ -12,9 +12,11 @@ services:
       context: .
       dockerfile: Dockerfile.production
     command: npm test
-    restart: on-failure
+    # restart: on-failure
     depends_on:
       - db
+    environment:
+      WAIT_HOSTS: db:5432
 
 volumes:
   pgdata:
