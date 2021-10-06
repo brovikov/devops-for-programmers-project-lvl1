@@ -26,5 +26,3 @@ COPY ./app .
 COPY ./.env.example ./.env
 
 EXPOSE 8080
-
-CMD /wait && npm start
