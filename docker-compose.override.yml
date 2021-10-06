@@ -6,6 +6,25 @@ services:
     command: npm start
     volumes:
       - ./app:/app
+    ports: 
+      - "0.0.0.0:8080:8080"
     depends_on:
       - db
     
+  caddy:
+    image: caddy:2.4.5-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "./services/caddy/Caddyfile:/etc/caddy/Caddyfile"
+      - "./public:/etc/caddy/public"
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - app
+
+volumes:
+  caddy_data:
+  caddy_config:
