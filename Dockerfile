@@ -8,4 +8,7 @@ FROM node:14.16
 #
 # ENV SODIUM_NATIVE_PREBUILD=/prebuilds/node_modules/sodium-native/
 
+ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.9.0/wait /wait
+RUN chmod +x /wait
+
 WORKDIR /app
