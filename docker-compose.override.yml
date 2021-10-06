@@ -9,6 +9,3 @@ services:
     depends_on:
       - db
     
-volumes:
-  caddy_data:
-  caddy_config:
