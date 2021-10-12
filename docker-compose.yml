@@ -10,12 +10,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.production
-    # command: [ "/bin/sh", "-c", '/wait && npm test' ]
-    command: npm test
+    command: [ "/bin/sh", "-c", '/wait && npm test' ]
     depends_on:
       - db
-    # environment:
-    #   WAIT_HOSTS: db:5432
+    environment:
+      WAIT_HOSTS: db:5432
 
 volumes:
   pgdata:
