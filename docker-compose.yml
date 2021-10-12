@@ -11,7 +11,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.production
-    command: npm test
+    command: [ "/bin/sh", "-c", '/wait && npm test' ]
     depends_on:
       - db
 
