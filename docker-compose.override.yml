@@ -11,8 +11,6 @@ services:
       - "8080:8080"
     depends_on:
       - db
-    # environment:
-    #   WAIT_HOSTS: db:5432
     
   caddy:
     image: caddy:2.4.5-alpine
